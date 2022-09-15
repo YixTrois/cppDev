@@ -1,0 +1,54 @@
+a compiler and a linker
+an editor for source code
+a debugger
+
+building: cpp compile to obj file link to exe
+
+popular tools :
+compile and linke: GCC, Clang
+ide: vscode, vs, collections
+
+online compilers:
+testing ne wlangauge or lirary featuers.
+sharing a snippet
+
+isocpp.org/get-started
+c++ backwards compatitability: new version will not break the code.
+
+vs: editor, compiler, debugger, related tools
+
+kinds of applications:
+phone and other client apps(including windows) including games
+console applications
+services
+servers 
+libraries
+
+console app structure:
+// Hello.cpp: defines the entry point for the console applications
+// preprocessing command
+#include <iostream> // input output
+#include <string>  
+
+int main()
+{
+    std::cout << "Type your name" << std::endl;
+    std::string name; // declares a variable;
+    std::cin >> name;
+    std::cout << "Hello, " << name << std:endl;
+    return 0;
+}
+// std is the special name that identifies what's called the standard namespace
+// cout stands for console output
+// << insertion operator
+// std::string standard string
+// std::cin console input
+
+// cross platform langauge 
+// widely used and supported 
+
+// edit your code
+// build(compile and link)
+// run(with or without debugging)
+
+

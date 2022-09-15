@@ -1,0 +1,15 @@
+c++ is a general pupose language, fastest, memory use 
+do not need to learn c first
+standard library: Built in Capabilities
+string class, collections, smart pointers, file and screen IO
+
+modern c++
+managing memory yourself is old school
+pointer is arithmetic for string or array work
+modern c++ looks like c# or java but faster
+
+standardization
+a language belongs to no person or company
+there is a standard that defines the language
+compiler vendors implement a lot in advance
+different compilers get to 100% at different paces

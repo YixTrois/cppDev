@@ -1,0 +1,21 @@
+building
+- you can make the compiler a promise
+- linker will ensure it is kept
+- include only a convenience
+- put each class  in its own file
+
+class keyword 
+private and public sections 
+declare like fundamental types
+access members with 
+
+class Person // the keyword class introduces the declaration
+{
+    private:
+        std::string firstname;
+        std::string lastname;
+        int arbitrarynumber;
+    
+    public:
+        std::string getName();
+};

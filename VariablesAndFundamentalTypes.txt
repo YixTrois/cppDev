@@ -1,0 +1,47 @@
+c++ is a storngly typed language:
+- variable can hold only certain types of values 
+- must be declared before they are used and can't chagne type
+- the compiler 
+
+Fundamental types built into the langauge
+-  numbers, boolean, single characters.
+
+User defined types
+- Strings, dates, business objects
+- structs and classes
+
+user defined types are full participants in the language
+
+fundamental types:
+integers: short, long, int
+real numbers: float, double
+character: char, unsigned char
+Boolean(true/false): bool
+
+Auto:
+Ask the compiler to deduce the type 
+variabe is still strongly typed
+useful for ugly declarations
+
+'c' // type char
+"s" // type const char* ctype string
+
+3L // type long
+1'000'000'000'000 // type long long
+0xFF // type int // hex literal
+0b111 // type int // binary literal
+
+casting
+compiler will convert types
+by casting, you make your intention clear
+this can backfire
+always use safe casts 
+suffixes to show type of a literal
+
+variables have a type and must be declared before they are used
+different types hold different kinds of deta
+- have different lengths and maximum values
+- the compiler knows and will help you
+be aware that over flow can happen silently
+- avoid using very small types like char for numbers
+
