@@ -32,3 +32,12 @@ std::string Person::getName() // Use fully qualified name
 {
     return firstname + " " + lastname; // access member variables with no special syntax
 }
+
+class Person
+{
+    // ...
+    Person(std::string first,  // constructors have the same name as the class
+        std::string last,  // they take arguments, which have a type and a name 
+        int arbitrary);
+    // ... 
+}
