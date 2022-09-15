@@ -9,13 +9,26 @@ private and public sections
 declare like fundamental types
 access members with 
 
+person.h -> cpp example (#include Person.h)
+person.h -> cpp Person (#include Person.h)
+
+Person.h file:
 class Person // the keyword class introduces the declaration
 {
-    private:
-        std::string firstname;
+    private: // member variables are generally private
+        std::string firstname; 
         std::string lastname;
         int arbitrarynumber;
     
-    public:
-        std::string getName();
-};
+    public: // functions are generally public
+        std::string getName(); // don't have to code them, just declare them
+};    // don't forget the semicolon
+
+Person.cpp file
+
+#include "Person.h" // includes the same header as consuming code uses
+
+std::string Person::getName() // Use fully qualified name
+{
+    return firstname + " " + lastname; // access member variables with no special syntax
+}
