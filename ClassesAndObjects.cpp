@@ -8,6 +8,5 @@ int main()
     std::string name = p1.getName();
 
     //int i = p1.arbitrarynumber;
-
     return 0;
 }
