@@ -33,6 +33,12 @@ std::string Person::getName() // Use fully qualified name
     return firstname + " " + lastname; // access member variables with no special syntax
 }
 
+Objects:
+- instance of a class
+- has own copy of member variables
+- member functions operate on member variables(and arguments)
+- initialized with a constructor
+
 class Person
 {
     // ...
@@ -41,3 +47,93 @@ class Person
         int arbitrary);
     // ... 
 }
+
+Person::Person(std::string first, // use fully qualified name
+                std::string last, // no return type
+            int arbitrary)
+            : // this colon introduces initializers
+firstname(first),
+lastname(lastname),
+arbitrarynumber(arbitrary)
+{
+    // empty body is quite normal
+}
+
+scope:
+constructor: have a life time, the close brace, destructor
+resource acquisition is initialization: acquire in constructor, release in destructor 
+
+struct:
+plain old data, member functions, constructor, destructor, 
+the only difference between class and struct is that default access is public, and in class it is private. 
+we would use struct if it is only simply holding the data, but we would use class if there is business logic contained. 
+
+Namespaces:
+prevent name collisions, separate from class anme with ::
+never use namesapces in the header file. always call things in the full names in the headfile. people who include headerfile maynot want your using statement as part of the package.
+
+Inheritance:
+key to oo design
+derived classes (add or override)
+
+class Tweeter:   // same class keyword
+    public Person colon indicates inheritance
+    {
+        // list only additional member variables and functions.
+    };
+
+
+Tweeter::Tweeter(
+    std::string first,
+    std::string last,
+    int arbitrary,
+    std::string handle)
+    :
+    Person(first, last arbitrary), // pass some parameters to the base class in the initialization
+    twitterhandle(handle)
+    {
+
+    }
+
+Enum:
+give names to a set of constants,
+names must be unique
+
+enum Status // keyword enum
+{
+    Pending,
+    Approved,
+    Cancelled // no comma after the last
+};
+
+Scoped Enum
+allows underlying type other than int
+name don't have to be uniqueuse fully qualified names 
+
+enum class FileError
+{
+    notfound, 
+    ok
+};
+
+enum class NetworkError
+{
+    disconnected,
+    ok    // two "ok" is ok
+};
+
+Status s = Pending; // declare as if the enum was a type
+s = Approved;
+
+FileError fe = FileError::notfound; // for scoped enums, fully qualify the enum entry
+fe = FileError::ok;
+NetworkError ne = NetworkError::disconnected;
+ne = NetworkError::ok; 
+scoped enums make it simple to use named values instead of arbitrary constants.
+
+preprocessor:
+line start # 
+control what is compiled 
+use with care
+
+pragma once:  we use it when we have header include another header which has already been included in the same file.
