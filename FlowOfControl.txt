@@ -1,0 +1,54 @@
+standard constructs in almost every language:
+if,
+while, 
+calling a function,
+return 
+
+different in c++
+for,
+break,
+continue
+switch, immediate if, 
+goto
+
+if (x > 3) y = 7;
+
+if (x > 3)
+{
+    y = 7;
+}
+else
+{
+    x++;
+}
+
+While: can exit early using break
+switch: must be intergral type or enum
+
+switch (expression)
+{
+    case value1
+    // ... action ... 
+    break;
+    default: 
+    // ... action ...
+}
+
+switch ( Thing t = someFunction(stuff; t.getStatus())
+{
+    case value1:
+        // .... action ...
+        break;
+    default:
+        // ... action ...
+}
+
+we don't want t when switch is over.
+
+immediate if
+if (something)
+    result = 7;
+else
+    result = 302;
+
+result = something? 7 : 302;
