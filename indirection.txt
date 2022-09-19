@@ -1,0 +1,40 @@
+reference:
+1) can on ly set target when declaring it
+2) all other actions go through the reference
+3) cannot be made to refer to something else
+
+Pointers:
+1) can point to somethign that exists
+2) can point "nowhere"
+3) can be made to point to something else
+
+int* pA = &A; // take the address of the a, and put that into pA // modern people tend to write this way.
+int *pA = &A; // space around the * do not matter
+
+*pA = 5; to get through the pointer to its target 
+
+Person Kate("Kate", "Gregory", 234);
+Person* pKate = &Kate;
+name = (*pKate).GetName();
+name = pKate->GetName();  // shortcut for (*p)
+
+null pointer:
+not pointing to anything.   0
+NULL    nullptr // modern way of saying null pointer
+
+const:
+A way to commit to the ocmpiler you won't change something
+- when declaring a local variable
+   int const zero = 0;
+   // so that other people won't change this value
+- As a function parameter
+    int foo(int const i) // i doesn't change in the function 
+    int something(Person const& p) // this is more commonly used, we are taking p by reference since we want to save the cost by copying the whole object Person
+- Modiffier on a member function
+    int GetName() const; // this member function doesn't change the member variables.
+
+const correctness after it is built is difficult.
+
+const after is better: int const ci = 3 instead of const int ci = 3;
+
+  

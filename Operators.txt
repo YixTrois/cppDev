@@ -1,0 +1,38 @@
+arithmetic operators:
+shortcuts:
+increment / decrement: i++, ++i, i--, --ide
+modulo: % 
+no exponential 
+
+
+comparison:
+&& and  
+|| or
+
+overloads:
+operator overloading: user defined types just like fundamental Type
+for example: 
+int i = j + 3;
+Order newOrder = oldOrder + newItem;
+invisible, +, << and >>
+
+operator overloads:
+a) write a function that defines the operator
+b) usually a member function
+c) occaionally a free function
+
+standard library has plenty of useful overloads:
+1) they are invisible 
+2) +  string
+3) bit shift for cout and cin, << and >>
+4) ++ iterator
+
+we can overload all of the operators 
+
+
+writing an overload:
+MyObject < Something
+
+
+
+
