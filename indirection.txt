@@ -37,4 +37,28 @@ const correctness after it is built is difficult.
 
 const after is better: int const ci = 3 instead of const int ci = 3;
 
-  
+const with indirection:
+- references cannot retarget
+- so const means you can't chagne the value
+int const & rI // we can't change the value of rI
+
+you can declare the pointer to be const 
+int * const cpI // then you can't change it to point somewhere else.
+
+you can declare that the pointer points at something const
+int const * cpI 
+then you can't use it to change the value of the target. for example: * cpI = 2 wont compiler
+
+extreme case: 
+int const * const crazy // declare the pointer is const and it points at somethign const.
+// which means that you can't chagne ti to point somewhere else or use it to change the value of the target.
+
+in cpp, there is no type that is a pointer, it is always pointer to some certain type.
+
+Pointers and references provide another way to accss memory
+- references ahve simpler sytax
+Const keeps your programs correctness
+- Functions that take literal values need to be aware of const
+- Const-correctness spreads through yoru code
+- If you take a reference for speed, you should take a const refrence
+- many operator overloads, construcotrs and other "canonical" functions take const references.
