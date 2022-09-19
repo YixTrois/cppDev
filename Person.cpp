@@ -14,21 +14,21 @@ lastname(last),
 arbitrarynumber(arbitrary)
 {
     // empty body is quite normal
-    cout << "constructing" << getName() << endl;
+    cout << "constructing" << GetName() << endl;
 
 }
 
 Person::Person() : arbitrarynumber(0)
 {
-    cout << "constructing " << firstname << " " << lastname << endl;
+    cout << "constructing " << GetName() << endl;
 }
 
 Person::~Person()
 {
-    cout << "destructing " << firstname << " "<<lastname << endl;
+    cout << "destructing " << GetName() << endl;
 }
 
-std::string Person::getName() // Use fully qualified name
+std::string Person::GetName() const// Use fully qualified name
 {
     return firstname + " " + lastname; // access member variables with no special syntax
 }

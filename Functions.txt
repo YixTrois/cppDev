@@ -1,0 +1,49 @@
+int DoubleIt(int x) // takes x by value(normal)
+{
+    x = x * 2;    // the x used inside is a copy of what was passed
+    return x;      // returns by value
+}
+
+int DoubleIt(int& x) // takes x by reference 
+{
+    x = x * 2;  // this changes the real x, may not be what you want
+    return x;
+}
+
+the reason we took things by reference is that:
+1) we want to change the number in the calling scope
+2) when the object is a parameter and the object is potentially large, and they want to save the copy
+when you make a value call, you can potentially incur a runtime cost of copying the object
+
+take by const reference
+bool Is2MorePrime(int const& x)
+{
+    return IsPrime(x + 2);
+} // even though it is taken by reference, it is not changing by reference
+a const object cannot be changed
+
+member functions:
+- declare in class declaration (.h)
+- can implement in .cpp file use full name.   Peron::GetName()
+- can implement "inline" where declared
+- mark as const unless you can't 
+
+
+
+understanding error messages:
+compiler errors:
+1) have you delcared the function?
+2) usually in a. h
+3) making a promise
+
+linker errors:
+1) have you implemented that function
+2) usually in a .cpp
+3) keeping the promise.
+
+when getting ton of errors, solve the first one
+
+
+
+
+    

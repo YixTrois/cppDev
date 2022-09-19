@@ -3,7 +3,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-int main()
+int ifpractice()
 {
     int x,y;
     cout << "Enter two numbers" << endl;
