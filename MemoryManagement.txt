@@ -1,0 +1,19 @@
+The Free Store:
+- local variables go out of scope when the function ends.
+- that's not always what you want
+- the free store is for longer lived variables
+
+stack is where the local storaged is kept. stack == local
+heap is used for the free store.  heap == free sotre
+
+how to access free store
+1) create with new
+2) returns a pointer to the object or instance
+3) uses a constructor to initialize the object
+
+when we don't need it
+1) tear down with delete
+2) uses the destructor to clean up the object
+
+slightly different syntax for "raw arrays"
+but modern c++ avoids "raw arrays"
