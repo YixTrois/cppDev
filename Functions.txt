@@ -43,6 +43,24 @@ linker errors:
 
 when getting ton of errors, solve the first one
 
+causes of error messages:
+1) typed the  name wrong when calling 
+2) passed teh wrong number or types of parameters when calling
+3) mistake declaring
+4) mistake implementing
+5) forgot to implement
+6) forgot to include header when calling
+7) forgot to include header when implementing
+8) forgot to add implementation file to project
+
+
+summary:
+1) declare functions before calling them
+2) member functions: in the class declaration
+3) free functions: usually in a header
+4) implement them somewhere linker will use them
+5) take arguments by value or reference
+6) take arguments by value or reference
 
 
 
