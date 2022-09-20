@@ -70,4 +70,4 @@ weak_ptr:
 Summary:
 the free store(aka the heap) gives objects a lifetime longer than local scope
 manual memory management is hard
-smart poitners make life a lot simpler
+smart poitners 赛高!
