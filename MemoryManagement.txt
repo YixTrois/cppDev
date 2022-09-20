@@ -17,3 +17,57 @@ when we don't need it
 
 slightly different syntax for "raw arrays"
 but modern c++ avoids "raw arrays"
+
+set things to null pointer after you have deleted them, it is safe to call to delte null pointer.
+
+if you got a pointer, from new, you have to keep track of it 
+- at some point you must call delete
+what happens if someone copies it? they can delete yours or vice versa 
+waht happens if the local variable(the pointer) goes out of scope early?   causing memory leak
+- delete too soon 
+- delete twice
+- never delete
+
+rule of five:
+1. put htat pointer you got from new, keep it in an object, we will write special member functions of the object to manage everythin
+for example: Destructor can call deletes what may have been created with new.
+2. write a copy constructor in case someone copy, a very typical appraoch to make a deep copy,
+uses new to initialize from exisiting value.
+3. copy assignment operator:
+this need to initialize the new thing you'are making the copy of, but also clean up any existing value that was in
+4. move constructor
+5. move asssignment operator
+
+rule of zero:
+design your class not to need any of these 
+stack sematics: rely on things from the library.
+
+Easy meomry management:
+Imagine a template class with just one member variable
+- A t*  that you got from new
+Constructor saves the T* in the member variable
+Destructor will delete that T*
+- No memory leak
+Handle copy and move
+- prevent it(private or deleted copy constructor and copy assignment operator)
+- DEEP COPY
+- shallow copy with reference count: copy increments, destructor decrements, delete at 0;
+
+the key thing: operator overloads:
+- *
+- ->
+
+c++11 has nice smart pointers.
+
+standard library smart pointers:
+unique_ptr
+ - noncopyable(use std::move)
+share_ptr
+ - reference counted
+weak_ptr:
+ - lets you peek at a shraed_ptr without bumping the reference count
+
+Summary:
+the free store(aka the heap) gives objects a lifetime longer than local scope
+manual memory management is hard
+smart poitners make life a lot simpler

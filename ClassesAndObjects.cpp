@@ -7,7 +7,7 @@ using std::cout;
 using std::endl;
 using std::string;
 
-int main()
+int classesandobjectspractice()
 {
     Person p1("Aadfads", "Bdssdfsdf", 120);
     {
