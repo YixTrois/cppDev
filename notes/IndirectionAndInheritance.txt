@@ -1,0 +1,66 @@
+References and Inheritance:
+1) base class reference ca nactually refer t oa derived class instance
+2) Respects the is a relationship
+3) vital to Liskov substitutability
+
+any base class function can be called through a base reference to a derived instance 
+- virtual function - derived class function executes 
+ polymorphism
+- nonvirtual function - base class function executes
+
+can't call derived class functions:
+- compiler only knows this is a base class reference
+
+can't create a "derived class reference" that refers to a base class instance. - some derived class member variable would be missing
+
+pointer and inheritance
+A "pointer to a base class" can actaully point to a derived class instance.
+Any base class function can then be called through the pointer
+- virtual function - derived class function executes
+- nonvirtual function - base class function executes
+- this is c++ - you get to choose
+
+can't aim to "pointer to derived class" at a base class instance
+- some derived-class member variables would be missing
+
+smart pointers and inheritance:
+same rules when using smart pointers
+smart pointers act like regular pointers and that includes polymorphism
+
+if you have a virtual function, also make the destructor virtual, it will cause leak otherwise
+
+slicing:
+if you copy objects around, slicing can occur
+- copy a derived object into a base object - extra member variables fall away
+- can't copy a base object into a derived object
+
+same rules apply when passing to a function by value
+- a copy is made
+- slicing will happen
+
+the reason we are using references or pointers is to avoid slicing.
+- references use same syntax as solid objects
+
+casting pointers
+you have a base class pointer but you know it really points to a derived instance
+can cast to a derived class pointer
+you can call derived methods with it
+
+static_cast<type>
+compile time only, up to you to be sure it's safe
+dynamic_cast<type>
+runtime check
+works only when casting a pointer to a class with a virtual table
+returns null if cast failes 
+slower but safer 
+
+cosnt_cast: for casting away const(not modern)
+reinterepret_cast: for bit twiddling(not a beginner technique)
+
+polymorphism lets you write general code that relies on specific implementations
+- update all the acccounts, ship all the orders, pay all the employees
+
+raw pointers, smart pointers, and references all support polymorphism
+copying solid objects derived to base can cause slicing
+cast templates give you safety and expressiveness
+
