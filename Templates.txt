@@ -1,0 +1,56 @@
+c++ implements genericity with templates:
+resolved at compile time
+no runtime check 
+
+write a class or function once:
+average, largest, smallest, 
+type safe collections, algorithms that work on them
+often rely on operator overloads
+
+much of the standard library is template-based:
+collections, sorting, searching
+standard template library
+
+template <class T>
+T max(T const& t1, T const& t2) // write the function with a placeholder type
+{
+    return t1 < t2? t2: t1;
+}
+
+max(33, 44)
+max(x, 0)
+max(s1, s2)
+max<double>(33, 2.0) // will return double.    // when using the function, compiler may deduce the type you ar eusing
+
+template <class T>        // write the class with a placeholder type
+class Accum
+{
+private:
+    T total;
+public:
+    Accum(T start): total(start) {};
+    T operator+= (T const& t){
+        return total = total + t;
+    }
+    T GetTotal() const {return total;}
+}
+
+Accum<int> integers(0);        // when using the class, specify the type
+Accum<string> strings("";)
+
+Template specialization:
+sometimes a template wont work for a particular class
+- operator or function is missing(and you can't add it)
+- logic in the operator won't work for this case
+First choice: add the operator or function with the right logic
+second choice: specialize the template
+
+templates add tremendous power to c++
+- compile time checks means no runtime hit
+author of code that uses templates must ensure that types are compatible with template chosen
+template specializations let you handle special cases
+many c++ developers never write a template
+all good c++ developers should use them 
+- save development time
+- error checking and dege cases aren't forgotten
+- flexibility in the face of future enhancements
